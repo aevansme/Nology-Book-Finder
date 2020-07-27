@@ -15,13 +15,13 @@ import { RouterModule } from '@angular/router';
 import { CollectionModule } from './collection/collection.module';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBdp7skjEfoMsODvPmxgwQyWs730Td_-is",
+  apiKey: "<API Key goes here>",
   authDomain: "nologybookfinder.firebaseapp.com",
   databaseURL: "https://nologybookfinder.firebaseio.com",
   projectId: "nologybookfinder",
   storageBucket: "nologybookfinder.appspot.com",
-  messagingSenderId: "426709603675",
-  appId: "1:426709603675:web:d28ae2a29a159d75a1367e"
+  messagingSenderId: "<sender Id goes here>",
+  appId: "<appId goes here>"
 };
 
 @NgModule({
