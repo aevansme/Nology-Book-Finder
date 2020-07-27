@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400&display=swap');
+
+$primary: #3F3D56;
+$gray: gray;
+$lightgray: lightgray;
+$lightergray: #f7f7f7;
+
+body {
+    margin: 0px;
+}
+
+/*
+    Typography
+*/
+h1,h2,h3,h4,h5 {
+    font-family: 'Rowdies', cursive;
+    margin: 0px;
+    font-weight: 400;
+}
+* { 
+    font-family: 'Rowdies', cursive;
+    color: $primary;
+    font-weight: 300;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+/*
+    Forms
+*/
+button, input, option {
+    &:focus {
+        outline: 0px transparent!important;
+    }
+}
+input {
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin-bottom:10px;
+    background-color: $lightergray;
+    border: 1px solid $lightgray;
+    border-radius: 30px;
+}
+.btn {
+    border: none;
+    border-radius: 30px;
+    background: $primary;
+    color: #f7f7f7;
+    padding: 10px;
+
+    &.btn-block {
+        width: 100%;
+    }
+
+    &.btn-secondary {
+        border: 1px solid $primary;
+        color: $primary;
+        background: white;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

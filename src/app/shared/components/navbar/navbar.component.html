@@ -1,0 +1,13 @@
+<div id="navbar">
+    <h2 routerLink="/search">BF.</h2>
+    <div class="right-items">
+        <ng-container *ngIf="authSvc.isLoggedIn$ | async as isLoggedIn; else guest">
+            <a class="nav-item" [routerLink]="['search']">Search</a>
+            <a class="nav-item" [routerLink]="['collections']">Collection</a>
+            <a class="nav-item" (click)="onSignOut()">Logout</a>
+        </ng-container>
+        <ng-template #guest>
+            <a class="nav-item" (click)="onSignIn()">Login</a>
+        </ng-template>        
+    </div>
+</div>

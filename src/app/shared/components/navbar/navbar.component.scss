@@ -1,0 +1,17 @@
+#navbar {
+    height: 30px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+
+    .right-items {
+        margin-left: auto;
+    }
+    .nav-item {
+        margin: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

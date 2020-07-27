@@ -1,0 +1,17 @@
+<div id="search-form">
+    <img id="img-reader" src="assets/images/book-reading-illustration.svg" />
+    <form>
+        <div class="form-group">
+            <input  id="txt-search" 
+                    autofocus 
+                    type="text" 
+                    [(ngModel)]="searchTerm" 
+                    [ngModelOptions]="{standalone: true}" 
+                    placeholder="Search by author.. e.g. 'Tolkien'" />
+        </div>        
+        <button type="submit" id="btn-search" class="btn btn-primary" (click)="onSearch()">SEARCH</button>
+    </form>
+</div>
+
+<!-- Render out the list format -->
+<app-search-results-list *ngIf="results" [results]="results"></app-search-results-list>

@@ -1,0 +1,33 @@
+<!-- Title/Filter Bar -->
+<div id="filter-container">
+    <h4>
+        <small>Filter results by</small>
+    </h4>
+    <select (change)="onFilterByGenre($event)">
+        <option value="">All genres</option>
+        <option *ngFor="let genre of genres">{{genre}}</option>
+    </select>
+</div>
+
+<!-- Search Results -->
+<h3 id="title-search">Search Results</h3>
+<div id="results-container">
+    <div *ngFor="let result of _results" class="result-item" [ngClass]="{'hidden': result.isHidden}">
+        <ng-container *ngIf="result.imageLinks">
+            <img [src]="result.imageLinks.thumbnail" />
+        </ng-container>
+        <h4>{{result.title}}</h4>
+        <p><small class="text-gray">{{result.authors | joinArray}}</small></p>
+        <p><small class="text-gray">{{result.publishedDate}}</small></p>
+
+        <div class="actions-container">
+            <ng-container *ngIf="authSvc.isLoggedIn$ | async as isLoggedIn; else guest">
+                <button class="btn btn-primary" (click)="onAddToCollection(result)">Add to collection</button>
+            </ng-container>  
+            <ng-template #guest>
+                <button class="btn btn-primary" (click)="onLogin()">Login to save</button>
+            </ng-template>         
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,5 @@
+<h2 class="text-center">You have saved the following books...</h2>
+<div *ngFor="let item of items" class="collection-item">
+    <h4>{{item.title}}</h4>
+    <p>{{item.description || 'No Description...'}}</p>
+</div>
